@@ -4,19 +4,6 @@
 echo "HealthRhythms Installer"
 
 
-confirm() {
-    # call with a prompt string or use a default
-    read -r -p "${1:-Are you sure? [y/N]} " response
-    case "$response" in
-        [yY][eE][sS]|[yY]) 
-            true
-            ;;
-        *)
-            false
-            ;;
-    esac
-}
-
 echo "This utility will install all HealthRhythms repos and dependencies in the current directory. Any existing directories will be overwritten"
 
 read -p "Are you sure you want to continue? <y/N> " prompt
