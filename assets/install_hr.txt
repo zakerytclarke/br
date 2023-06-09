@@ -22,8 +22,6 @@ else
     echo ""    
 fi
 
-echo $loggedin
-exit 0
 # List all repos
 grep_output=$(gh repo list healthrhythms -l 1000 | grep -oE "healthrhythms/[^[:space:]]+")
 
