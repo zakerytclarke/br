@@ -1,5 +1,27 @@
 #!/bin/bash
 
+
+echo "HealthRhythms Installer"
+
+
+confirm() {
+    # call with a prompt string or use a default
+    read -r -p "${1:-Are you sure? [y/N]} " response
+    case "$response" in
+        [yY][eE][sS]|[yY]) 
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+
+echo "This utility will install all HealthRhythms repos and dependencies in the current directory. Any existing directories will be overwritten"
+
+# Silence is not consent
+confirm && echo "Here we go!"
+
 # Install dependencies
 sudo apt-get install gh
 sudo apt-get install pre-commit
